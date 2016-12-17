@@ -1,3 +1,6 @@
 [submodule "easycom-webui"]
 	path = easycom-webui
 	url = git@github.com:cha87de/easycom-webui.git
+[submodule "easycom-phpbackend"]
+	path = easycom-phpbackend
+	url = git@github.com:cha87de/easycom-phpbackend.git
