@@ -1,0 +1,3 @@
+[submodule "easycom-webui"]
+	path = easycom-webui
+	url = git@github.com:cha87de/easycom-webui.git
