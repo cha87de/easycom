@@ -1,18 +1,19 @@
-# easycom
-A web-based assistant for freelancers - for time recording and invoicing.
+# easyCOM - an overview
+A web-based assistant for freelancers - for time recording and invoicing. The typical workflow could be:
 
-The workflow is as follows:
- * The freelancer creates customers with number, name, address, ...
- * Per customer time records can be created with a start time, end time, 
-	comment, and hourly rate
- * Time records can be accounted with one click to an invoice
- * Invoices can be created manually, edited, marked as paid, and
-  exported as PDFs (via Latex template)
+ 1. create customer record
+ 2. add working time records with hourly rate
+ 3. one-click invoice creation on unaccounted time records
+ 4. export invoice as pdf (via Latex template)
+ 5. mark invoice as paid
+ 
+*If this workflow fits your needs, easycom will save an incredible amount of your time.*
 
-![Customer view](/screenshots/1_customer.png?raw=true "Customer view")
-![Time record edit window](/screenshots/2_timerecord_edit.png?raw=true "Time record edit window")
-![Invoice list](/screenshots/3_invoices.png?raw=true "Invoice list")
-![Invoice edit window](/screenshots/4_invoice_edit.png?raw=true "Invoice edit window")
+## Screenshots
+![Customer view](/screenshots/1_customer.png?raw=true "Customer view" =250x)
+![Time record edit window](/screenshots/2_timerecord_edit.png?raw=true "Time record edit window" =250x)
+![Invoice list](/screenshots/3_invoices.png?raw=true "Invoice list" =250x)
+![Invoice edit window](/screenshots/4_invoice_edit.png?raw=true "Invoice edit window" =250x)
 
 ## Insights
 easycom consists of a web based user interface (ui) and a server based backend,
