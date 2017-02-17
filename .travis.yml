@@ -1,9 +1,8 @@
 language: node_js
 node_js:
 - '0.12'
-before_script:
-- ./workspace-init
 script:
+- ./workspace-init
 - ./makebuild
 deploy:
   provider: releases
