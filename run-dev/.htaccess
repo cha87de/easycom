@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteRule ^data/(.*)$         easycom-phpbackend/data/$1 [L,QSA]
+RewriteRule ^action/(.*)$       easycom-phpbackend/action/$1 [L,QSA]
+RewriteRule ^$			index.html [L,QSA]
+
+RewriteCond %{REQUEST_FILENAME} !-s
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$              easycom-webui/$1 [L,QSA]

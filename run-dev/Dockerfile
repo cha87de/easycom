@@ -8,7 +8,7 @@ MAINTAINER alb-TEC engineering <info@alb-tec.de>
 RUN a2enmod rewrite
 RUN a2enmod actions
 RUN rm /etc/apache2/sites-available/* && rm /etc/apache2/sites-enabled/*
-ADD ./apache-conf/* /etc/apache2/sites-available/
+ADD ./apache2-easycom.conf /etc/apache2/sites-available/
 RUN ln -s /etc/apache2/sites-available/*.conf /etc/apache2/sites-enabled/
 
 # Set Apache environment variables

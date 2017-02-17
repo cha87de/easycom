@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# build easycom-webui
+echo -n "build easycom-webui"
+(
+	cd easycom-webui
+	sencha app build # >> build.log
+)
+echo " OK"
+
+# pack easycom archive
+echo -n "pack easycom archive"
+(
+	cd build/production/
+	mv albtec.easycom easycom-webui
+	cp -r ../../easycom-phpbackend/ .
+	cp ../../run-dev/.htaccess .
+	tar cfz easycom.tgz easycom-phpbackend easycom-webui .htaccess
+)
+echo " OK"
+
+# cleanup
+echo -n "cleanup"
+rm -r build/production/easycom-phpbackend
+rm -r build/production/easycom-webui
+rm -r build/production/.htaccess
+echo " OK"
+
+# provide package tgz
+echo -n "provide package tgz"
+mv build/production/easycom.tgz .
+echo " OK"

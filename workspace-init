@@ -6,6 +6,15 @@ if [[ ! -d ext-6.2.0 ]]; then
 	unzip ext-6.2.0-gpl.zip
 fi
 
+# install sencha command
+if [[ ! command -v sencha ]]; then
+	wget http://cdn.sencha.com/cmd/6.2.0/no-jre/SenchaCmd-6.2.0-linux-amd64.sh.zip
+	unzip SenchaCmd-6.2.0-linux-amd64.sh.zip
+	chmod +x SenchaCmd-6.2.0.103-linux-amd64.sh
+	./SenchaCmd-6.2.0.103-linux-amd64.sh -q
+	export PATH=~/bin/Sencha/Cmd/6.2.0.103:$PATH
+fi
+
 # create sencha ext workspace
 if [[ ! -f workspace.json ]]; then
 	sencha generate workspace .
@@ -27,9 +36,4 @@ if [[ ! -f workspace.json ]]; then
 	cd ..
 fi
 
-# create docker image
-if [[ ! $(docker images | grep alb-tec/easycom) ]]; then
-	docker build -t alb-tec/easycom run-dev
-fi
-
-echo "initialization terminated. Next steps: ./workspace-run-dev or ./workspace-run-prod"
+echo "Initialization finished. Next step, run './workspace-run-dev'"

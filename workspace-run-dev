@@ -8,6 +8,11 @@ function stop() {
 	docker rm easycom
 }
 
+# create docker image if missing
+if [[ ! $(docker images | grep alb-tec/easycom) ]]; then
+	docker build -t alb-tec/easycom run-dev
+fi
+
 # start docker container for dev server
 docker run -p 8080:80 -d --name=easycom \
 	-v $(pwd):/var/www/html \

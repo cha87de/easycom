@@ -1,0 +1,16 @@
+language: node_js
+node_js:
+- '0.12'
+before_script:
+- ./workspace-init
+script:
+- ./makebuild
+deploy:
+  provider: releases
+  api_key:
+    secure: rP9tylqL+YxhRp/nZvZhzZyrHetQ1XABvkIMl3YiWIWKcFLqG951J6Fsq3sq1sR8FV42eB/OylAQzZ3gv+RAmjtd4NnytJdcJFKW2eg2q0ZDgaGZHJfvK0aOJeh8T9nOnC44dUOwElx25wxszmyLxudiuQL7I3SDn0cUKkQy5QhPLzJEshAmA9yQPVi0Ihzjy8ZFiKGyrHOmoVgpkFLYExClTW4yaBsh5L29Mk79kCoBdDBrZI1WAY0SUGvxbXzeN5HyTbiNetFWeOALltP89QUe+Zb76ZuxtO6QeBeETEKozPjOp7JhVoXEhELUy97z3ueHGbfABxEMBS8hP+vTOa3N10C3ttwsB2qFVAvElOKAYikzGYdM9+mTd4+bDUM/D1SQ29JuaM+mPvBuueryPz0w+kRAg1l/7z75uycblV1WKFEeZFXt5Lw42lh7je7ZUJKvsXKV3bkBNhyWzwm77XHTJ4pE4cnA9I0HGFt+7E/Vh44aujJJC5OxWcA3v/9MEOYnlusX7rtnSkkBhQ7J1IrAvGZY9ZfG/JTpcjR2LtATleY3+rLT3IrUAUsM/xlvp+wbFFVTN6xIOs25IoColTlKHZdCgbBJ5r4DT5ipbPie6jYQd1V7IbEI+To4qPj5wo6W4DBy1CcPEPd/JkAVg3bTMgCW+kLPaxjJJxLDQKE=
+  file: "easycom.tgz"
+  skip_cleanup: true
+  on:
+    repo: cha87de/easycom
+    tags: true
