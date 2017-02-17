@@ -3,6 +3,7 @@
 # build easycom-webui
 echo -n "build easycom-webui"
 (
+	export PATH=~/bin/Sencha/Cmd/6.2.0.103:$PATH
 	cd easycom-webui
 	sencha app build # >> build.log
 )
