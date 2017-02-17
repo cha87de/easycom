@@ -2,13 +2,13 @@ language: node_js
 node_js:
 - '0.12'
 script:
-- ./workspace-init
-- ./makebuild
+- "./workspace-init"
+- "./makebuild"
 deploy:
   provider: releases
   api_key:
-    secure: rP9tylqL+YxhRp/nZvZhzZyrHetQ1XABvkIMl3YiWIWKcFLqG951J6Fsq3sq1sR8FV42eB/OylAQzZ3gv+RAmjtd4NnytJdcJFKW2eg2q0ZDgaGZHJfvK0aOJeh8T9nOnC44dUOwElx25wxszmyLxudiuQL7I3SDn0cUKkQy5QhPLzJEshAmA9yQPVi0Ihzjy8ZFiKGyrHOmoVgpkFLYExClTW4yaBsh5L29Mk79kCoBdDBrZI1WAY0SUGvxbXzeN5HyTbiNetFWeOALltP89QUe+Zb76ZuxtO6QeBeETEKozPjOp7JhVoXEhELUy97z3ueHGbfABxEMBS8hP+vTOa3N10C3ttwsB2qFVAvElOKAYikzGYdM9+mTd4+bDUM/D1SQ29JuaM+mPvBuueryPz0w+kRAg1l/7z75uycblV1WKFEeZFXt5Lw42lh7je7ZUJKvsXKV3bkBNhyWzwm77XHTJ4pE4cnA9I0HGFt+7E/Vh44aujJJC5OxWcA3v/9MEOYnlusX7rtnSkkBhQ7J1IrAvGZY9ZfG/JTpcjR2LtATleY3+rLT3IrUAUsM/xlvp+wbFFVTN6xIOs25IoColTlKHZdCgbBJ5r4DT5ipbPie6jYQd1V7IbEI+To4qPj5wo6W4DBy1CcPEPd/JkAVg3bTMgCW+kLPaxjJJxLDQKE=
-  file: "easycom.tgz"
+    secure: HjT+IiIHTDQeQfI2C8Pwi9bh7imzzpqHNpkwu/TW5kVmWrWlPK/fwhSobJkca8Tt5z92XI19jX+34UDQzMRQY6PUT/ai8NLE7gWHSsxPiGUFQ9uN01l2aEABjH0HhQRv3C2sM05cLu+3v3yP+JJe3Nnru82eIyPT4MA3xYQ63mmtogLNCxvYv3bNDFSAv2virEQYim4qJUNDYA9KGj6/+Qhk7XhMy65QZ0M0R7b3C+EgVHOKO09DYC9HUM5CdCpgfsaTm4ozNC2VpxP1FYdPPVf98waNiVa01mtL1QlFPzT7JiC6ei9in7PpPITYIb/H4GR/F54VcU67RaJZGIXgxXZTI2ShOXyfNH91VLA7Qb+NHsORVmodsy7FEzWdQDuoLUxxX9u3vPMFcFaM9FPzlprhICufirWE2zoGbJRZQ8GDLcE67EsgsoMqf8wHdDJymyKZkoMiWNMXG7JLRYAyuVH5jGSie+3XgW5gWftKZDtLTupp1Age/wW0pa68a1kYPP2o/KkZPuR32t8z/M8VG2/eRKSk7ownU7onKwCIOV0KmPSaRBkZhreb4W8nRN7cPeKNfJ1lbWmotEK9Kdj9slpL5nJA089MLi39nGaq7ipo9cGHTkuit/JTHaqhy8SYQSGnrsv3HQmTA+cdaDfL0xNw7zjiAXzhe/fGVtJQ/Vo=
+  file: easycom.tgz
   skip_cleanup: true
   on:
     repo: cha87de/easycom
