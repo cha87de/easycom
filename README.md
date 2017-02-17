@@ -1,4 +1,4 @@
-# easyCOM - an overview
+# easyCOM - an overview [![Build Status](https://travis-ci.org/cha87de/easycom.svg)](https://travis-ci.org/cha87de/easycom)
 A web-based assistant for freelancers - for time recording and invoicing. The typical workflow could be:
 
  1. create customer record
