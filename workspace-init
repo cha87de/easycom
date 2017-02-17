@@ -7,7 +7,7 @@ if [[ ! -d ext-6.2.0 ]]; then
 fi
 
 # install sencha command
-if [[ ! command -v sencha ]]; then
+if [[ ! $(command -v sencha) ]]; then
 	wget http://cdn.sencha.com/cmd/6.2.0/no-jre/SenchaCmd-6.2.0-linux-amd64.sh.zip
 	unzip -q SenchaCmd-6.2.0-linux-amd64.sh.zip
 	chmod +x SenchaCmd-6.2.0.103-linux-amd64.sh
