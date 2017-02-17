@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# download extjs
+if [[ ! -d ext-6.2.0 ]]; then
+	wget http://cdn.sencha.com/ext/gpl/ext-6.2.0-gpl.zip
+	unzip ext-6.2.0-gpl.zip
+fi
+
+# create sencha ext workspace
+if [[ ! -f workspace.json ]]; then
+	sencha generate workspace .
+	mv workspace.json workspace.json.tmp
+	head -n -2 workspace.json.tmp > workspace.json
+	rm workspace.json.tmp
+	echo -e "    },
+	\"frameworks\": {
+		\"ext\": {
+			\"path\":\"./ext-6.2.0\",
+			\"version\":\"6.2.0\"
+			}
+		}
+	}" >> workspace.json
+	
+	# install app in new workspace
+	cd easycom-webui
+	sencha app install
+	cd ..
+fi
+
+# create docker image
+if [[ ! $(docker images | grep alb-tec/easycom) ]]; then
+	docker build -t alb-tec/easycom run-dev
+fi
+
+echo "initialization terminated. Next steps: ./workspace-run-dev or ./workspace-run-prod"

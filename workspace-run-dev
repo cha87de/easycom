@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# handle script termination
+trap stop INT
+function stop() {
+	# cleanup docker container
+	docker stop easycom
+	docker rm easycom
+}
+
+# start docker container for dev server
+docker run -p 8080:80 -d --name=easycom \
+	-v $(pwd):/var/www/html \
+	alb-tec/easycom
+
+# watch sencha app for changes
+cd easycom-webui
+sencha app watch	# this is blocking!
