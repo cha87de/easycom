@@ -9,11 +9,14 @@ A web-based assistant for freelancers - for time recording and invoicing. The ty
  
 *If this workflow fits your needs, easycom will save an incredible amount of your time.*
 
+
+
 ## Screenshots
-![Customer view](/screenshots/1_customer.png?raw=true =250x)
-![Time record edit window](/screenshots/2_timerecord_edit.png?raw=true =250x)
-![Invoice list](/screenshots/3_invoices.png?raw=true =250x)
-![Invoice edit window](/screenshots/4_invoice_edit.png?raw=true =250x)
+![Customer view](/screenshots/1_customer.png?raw=true){:width="250px"}
+![Time record edit window](/screenshots/2_timerecord_edit.png?raw=true)
+<img src="/screenshots/2_timerecord_edit.png?raw=true" width="250">
+![Invoice list](/screenshots/3_invoices.png?raw=true)
+![Invoice edit window](/screenshots/4_invoice_edit.png?raw=true)
 
 ## Insights
 easycom consists of a web based user interface (ui) and a server based backend,
