@@ -1,15 +1,34 @@
 language: node_js
 node_js:
 - '0.12'
+
+services:
+  - docker
+
 script:
 - "./workspace-init"
 - "./makebuild"
+
+before_deploy:
+- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
 deploy:
-  provider: releases
+- provider: script
+  skip_cleanup: true
+  script: docker build -t cha87de/easycom:master . ; docker push cha87de/easycom:master
+  on:
+    branch: master
+- provider: releases
   api_key:
-    secure: HjT+IiIHTDQeQfI2C8Pwi9bh7imzzpqHNpkwu/TW5kVmWrWlPK/fwhSobJkca8Tt5z92XI19jX+34UDQzMRQY6PUT/ai8NLE7gWHSsxPiGUFQ9uN01l2aEABjH0HhQRv3C2sM05cLu+3v3yP+JJe3Nnru82eIyPT4MA3xYQ63mmtogLNCxvYv3bNDFSAv2virEQYim4qJUNDYA9KGj6/+Qhk7XhMy65QZ0M0R7b3C+EgVHOKO09DYC9HUM5CdCpgfsaTm4ozNC2VpxP1FYdPPVf98waNiVa01mtL1QlFPzT7JiC6ei9in7PpPITYIb/H4GR/F54VcU67RaJZGIXgxXZTI2ShOXyfNH91VLA7Qb+NHsORVmodsy7FEzWdQDuoLUxxX9u3vPMFcFaM9FPzlprhICufirWE2zoGbJRZQ8GDLcE67EsgsoMqf8wHdDJymyKZkoMiWNMXG7JLRYAyuVH5jGSie+3XgW5gWftKZDtLTupp1Age/wW0pa68a1kYPP2o/KkZPuR32t8z/M8VG2/eRKSk7ownU7onKwCIOV0KmPSaRBkZhreb4W8nRN7cPeKNfJ1lbWmotEK9Kdj9slpL5nJA089MLi39nGaq7ipo9cGHTkuit/JTHaqhy8SYQSGnrsv3HQmTA+cdaDfL0xNw7zjiAXzhe/fGVtJQ/Vo=
+   secure: HjT+IiIHTDQeQfI2C8Pwi9bh7imzzpqHNpkwu/TW5kVmWrWlPK/fwhSobJkca8Tt5z92XI19jX+34UDQzMRQY6PUT/ai8NLE7gWHSsxPiGUFQ9uN01l2aEABjH0HhQRv3C2sM05cLu+3v3yP+JJe3Nnru82eIyPT4MA3xYQ63mmtogLNCxvYv3bNDFSAv2virEQYim4qJUNDYA9KGj6/+Qhk7XhMy65QZ0M0R7b3C+EgVHOKO09DYC9HUM5CdCpgfsaTm4ozNC2VpxP1FYdPPVf98waNiVa01mtL1QlFPzT7JiC6ei9in7PpPITYIb/H4GR/F54VcU67RaJZGIXgxXZTI2ShOXyfNH91VLA7Qb+NHsORVmodsy7FEzWdQDuoLUxxX9u3vPMFcFaM9FPzlprhICufirWE2zoGbJRZQ8GDLcE67EsgsoMqf8wHdDJymyKZkoMiWNMXG7JLRYAyuVH5jGSie+3XgW5gWftKZDtLTupp1Age/wW0pa68a1kYPP2o/KkZPuR32t8z/M8VG2/eRKSk7ownU7onKwCIOV0KmPSaRBkZhreb4W8nRN7cPeKNfJ1lbWmotEK9Kdj9slpL5nJA089MLi39nGaq7ipo9cGHTkuit/JTHaqhy8SYQSGnrsv3HQmTA+cdaDfL0xNw7zjiAXzhe/fGVtJQ/Vo=
   file: easycom.tgz
   skip_cleanup: true
+  on:
+    repo: cha87de/easycom
+    tags: true
+- provider: script
+  skip_cleanup: true
+  script: docker build -t cha87de/easycom:latest . ; docker push cha87de/easycom:latest ; docker tag cha87de/easycom:latest cha87de/easycom:$TRAVIS_TAG ; docker push cha87de/easycom:$TRAVIS_TAG
   on:
     repo: cha87de/easycom
     tags: true
