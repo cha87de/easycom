@@ -28,8 +28,9 @@ The backend should be reimplemented in a more reliable and stable way.
 Get easily started with docker:
 
 ```
-docker run -d -p 8080:80 \
-    -v $(pwd)/easycom-data:/var/www/html/easycom-phpbackend/_data/
+docker pull cha87de/easycom:master
+docker run -d -p 8080:80 --name easycom \
+    -v $(pwd)/easycom-data:/var/www/html/easycom-phpbackend/_data/ \
     cha87de/easycom:master
 ```
 
