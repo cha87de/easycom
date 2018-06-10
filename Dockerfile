@@ -1,6 +1,9 @@
 FROM php:7.2-apache
 MAINTAINER alb-TEC engineering <info@alb-tec.de>
 
+# prepare for pdf creation
+RUN apt-get update && apt-get install -y texlive-full 
+
 # overwrite entrypoint
 COPY docker-php-entrypoint /usr/local/bin/
 
