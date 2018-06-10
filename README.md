@@ -21,8 +21,19 @@ with a REST based communication in between.
 The web based ui is based on Sencha ExtJS. Currently a sim simple php backend exists testing.
 The backend should be reimplemented in a more reliable and stable way.
 
-## Admin Setup Guide
+## Setup Guide
 
+### Use prebuild Docker image
+
+Get easily started with docker:
+
+```
+docker run -d -p 8080:80 \
+    -v $(pwd)/easycom-data:/var/www/html/easycom-phpbackend/_data/
+    cha87de/easycom:master
+```
+
+### Use with any existing webserver
 If you want to install easyCOM, please follow these steps:
 
  1. Prerequisite: a php enabled Apache2 webserver with rewrite module, the texlive packages for latex compilation.
