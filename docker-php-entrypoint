@@ -4,6 +4,7 @@
 # init easycom:
 ################################################
 
+echo "Prepare storage if not set"
 (
 	cd  /var/www/html/easycom-phpbackend/
 
@@ -18,6 +19,11 @@
 	fi
 
 	chown www-data _data -R
+)
+
+echo "Set password from ENV"
+(
+	htpasswd -cb /var/www/html/.htpasswd $HTUSER $HTPASS
 )
 
 ################################################

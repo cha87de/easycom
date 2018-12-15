@@ -1,3 +1,8 @@
+AuthType Basic
+AuthName "easycom"
+AuthUserFile .htpasswd
+Require valid-user
+
 RewriteEngine on
 RewriteRule ^data/(.*)$         easycom-phpbackend/data/$1 [L,QSA]
 RewriteRule ^action/(.*)$       easycom-phpbackend/action/$1 [L,QSA]
