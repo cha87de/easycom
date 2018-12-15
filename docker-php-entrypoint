@@ -23,7 +23,7 @@ echo "Prepare storage if not set"
 
 echo "Set password from ENV"
 (
-	htpasswd -cb /var/www/html/.htpasswd $HTUSER $HTPASS
+	htpasswd -cb /etc/apache2/.htpasswd $HTUSER $HTPASS
 )
 
 ################################################

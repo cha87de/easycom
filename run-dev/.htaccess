@@ -1,6 +1,6 @@
 AuthType Basic
 AuthName "easycom"
-AuthUserFile .htpasswd
+AuthUserFile /etc/apache2/.htpasswd
 Require valid-user
 
 RewriteEngine on
